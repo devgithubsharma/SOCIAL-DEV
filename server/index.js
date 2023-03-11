@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
@@ -10,11 +11,22 @@ const postRoute = require("./routes/posts");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const dbname = "social_database";
 
 dotenv.config();
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
-    console.log("Mongo Connected")
-});
+// mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+//     console.log("Mongo Connected")
+// });
+mongoose.connect(
+    `mongodb+srv://pran_77:neevapr@cluster0.rugnoma.mongodb.net/${dbname}?retryWrites=true&w=majority`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }, () => {
+        console.log("Mongo Connected")
+    }
+);
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 
@@ -36,7 +48,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (res, req) => {
     try {
-        //return res.status(200).json("file uploaded");
+        return res.status(200).json("file uploaded");
     }
     catch (err) {
         console.log(err);
@@ -51,6 +63,6 @@ app.use("/api/posts", postRoute);
 app.get("/", (req, res) => {
     res.send("Welcome to homepage")
 })
-app.listen(process.env.PORT || 8800, () => {
+app.listen(4000, () => {
     console.log("Backend Server initiated")
 })

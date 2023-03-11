@@ -3,7 +3,7 @@ import styles from "../../styles/register.module.css";
 import { useRef } from 'react';
 import { useHistory } from "react-router"
 import axios from '../../utils/client.js';
-import { } from "@material-ui/icons";
+// import { } from "@material-ui/icons";
 
 export default function Register() {
     const username = useRef();
@@ -23,7 +23,7 @@ export default function Register() {
                 password: password.current.value,
             };
             try {
-                await axios.post("/auth/register", user);
+                await axios.post("http://localhost:4000/api/auth/register", user);
                 history.push("/login");
             } catch (err) {
                 console.log(err);
