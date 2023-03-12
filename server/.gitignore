@@ -1,8 +1,3 @@
-.env
-.vs/slnx.sqlite
-.vs/slnx.sqlite
-*.sqlite
-
 /node_modules
 /.pnp
 .pnp.js

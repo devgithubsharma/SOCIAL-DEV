@@ -11,14 +11,14 @@ const postRoute = require("./routes/posts");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
-const dbname = "social_database";
+// const dbname = "social_database";
 
 dotenv.config();
 // mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
 //     console.log("Mongo Connected")
 // });
 mongoose.connect(
-    `mongodb+srv://pran_77:neevapr@cluster0.rugnoma.mongodb.net/${dbname}?retryWrites=true&w=majority`,
+    process.env.MONGO_URL,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
@@ -26,6 +26,9 @@ mongoose.connect(
         console.log("Mongo Connected")
     }
 );
+mongoose.set('strictQuery', true);
+console.log(mongoose.connection.readyState);
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 
