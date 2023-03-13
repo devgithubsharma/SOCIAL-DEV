@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from "../styles/rightbar.module.css";
 import birthday from "../assets/presentBirthday.png";
-import adOne from "../assets/advertisement.jpg";
+// import adOne from "../assets/advertisement.jpg";
 import { Users } from "../dummyData.js";
 import Online from "./Online.jsx";
 import { Link } from 'react-router-dom';
@@ -58,11 +58,11 @@ export default function Rightbar({ user }) {
                 <div className={styles.birthdayContainer}>
                     <img className={styles.birthdayImage} src={birthday} alt="" />
                     <span className={styles.birthdayText}>
-                        <b>Tristin</b> and <b>3 other friends</b> have a birthday today
+                    <b>Saurav Kumar</b> and <b>3 other friends</b> have birthday today
                     </span>
                 </div>
 
-                <img className={styles.rightbarAd} src={adOne} alt="" />
+                <img className={styles.rightbarAd} src="https://mediaqart.com/media/images/content/fbInstaAds_Reject_Banner.png" alt="" />
                 <h4 className={styles.rightbarTitle}>Online Friends:</h4>
                 <ul className={styles.onlineFriendList}>
                     {Users.map(u => (
@@ -107,9 +107,9 @@ export default function Rightbar({ user }) {
                         <span className={styles.rightbarInfoValue}>
                             {user.relationship === 1
                                 ? "Single"
-                                : user.relationship === 1
+                                : user.relationship === 2
                                     ? "Married"
-                                    : "-"}
+                                    : "Not Interested"}
                         </span>
                     </div>
                 </div>

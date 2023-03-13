@@ -12,14 +12,14 @@ export default function Topbar() {
     return (
         <div className={styles.topbarContainer}>
             <div className={styles.topbarLeft}>
-                <Link to="/" style={{ textDecoration: "none" }}>
-                    <span className={styles.logo}>CSUN Networking</span>
+                <Link to="/" style={{ textDecoration: "none" }}>    
+                    <span className={styles.logo}>SocialDev</span>
                 </Link>
             </div>
             <div className={styles.topbarCenter}>
                 <div className={styles.searchBar}>
                     <Search className={styles.searchIcon} />
-                    <input placeholder="Search for your fellow matadors!" className={styles.searchInput} />
+                    <input placeholder="Search friend,post or video" className={styles.searchInput} />
                 </div>
             </div>
             <div className={styles.topbarRight}>
