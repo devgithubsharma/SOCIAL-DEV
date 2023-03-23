@@ -5,6 +5,7 @@
     min-width: 250px;
     position: sticky;
     top: 50px;
+    width: 30%;
 }
 
 ::-webkit-scrollbar {

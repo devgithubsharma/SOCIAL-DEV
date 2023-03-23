@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from "../styles/rightbar.module.css";
 import birthday from "../assets/presentBirthday.png";
+// import {ads} from "../assets/ads.jpg"
 // import adOne from "../assets/advertisement.jpg";
 import { Users } from "../dummyData.js";
 import Online from "./Online.jsx";
@@ -62,7 +63,7 @@ export default function Rightbar({ user }) {
                     </span>
                 </div>
 
-                <img className={styles.rightbarAd} src="https://mediaqart.com/media/images/content/fbInstaAds_Reject_Banner.png" alt="" />
+                <img className={styles.rightbarAd} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-u4n8ehPuYD1GHexjA-4d-ZPpRzZqrBqs0A&usqp=CAU" alt="" />
                 <h4 className={styles.rightbarTitle}>Online Friends:</h4>
                 <ul className={styles.onlineFriendList}>
                     {Users.map(u => (

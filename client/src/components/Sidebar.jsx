@@ -35,20 +35,19 @@ export default function Sidebar() {
                     </li>
                     <li className={styles.sidebarListItem}>
                         <Event className={styles.sidebarIcon} />
-                        <span className={styles.sidebarListItemText}><a href="https://www.csun.edu/admissions-records/student-academic-calendar" style={{ textDecoration: "none" }}>Events</a></span>
+                        <span className={styles.sidebarListItemText}><a href="http://www.davp.nic.in/cal_of_events.htm" style={{ textDecoration: "none" }}>Events</a></span>
                     </li>
                     <li className={styles.sidebarListItem}>
                         <School className={styles.sidebarIcon} />
-                        <span className={styles.sidebarListItemText}><a href="csun.edu/class-search" style={{ textDecoration: "none" }}>Courses</a></span>
+                        <span className={styles.sidebarListItemText}><a href="https://in.coursera.org/courses?query=social%20media%20marketing" style={{ textDecoration: "none" }}>Courses</a></span>
                     </li>
                 </ul>
                 <hr className={styles.sidebarHR} />
                 <b>All Friends:</b>
                 <ul className={styles.sidebarFriendList}>
-                    {Users.map(u => (
-                        <CloseFriends key={u.id} user={u} />
-                    ))
-                    }
+                {Users.map((u)=> (
+            <CloseFriends key={u.id} picture={u.profilePicture} username={u.username}/>
+          ))}  
                 </ul>
             </div>
         </div>

@@ -48,7 +48,7 @@ export default function Share() {
                 <div className={styles.shareTop}>
                     {/* src=profilePic */}
                     <img src={user.profilePicture ? PF + user.profilePicture : PF + "../assets/blank-profile-picture.png"} alt="" className={styles.shareProfileImg} />
-                    <input placeholder={"Whats happening on campus " + user.username + "?"} className={styles.shareInput} ref={desc} />
+                    <input placeholder={"Whats going on " + user.username + "?"} className={styles.shareInput} ref={desc} />
                 </div>
                 <hr className={styles.shareHr} />
                 {file && (
