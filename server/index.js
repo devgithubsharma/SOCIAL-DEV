@@ -11,19 +11,18 @@ const postRoute = require("./routes/posts");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+
 // const dbname = "social_database";
 
-dotenv.config();
-// mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
-//     console.log("Mongo Connected")
-// });
+dotenv.config({ path: './.env' }) 
+
 mongoose.connect(
     process.env.MONGO_URL,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
     }, () => {
-        console.log("Mongo Connected")
+        console.log("Mongo Connected Successfully")
     }
 );
 mongoose.set('strictQuery', true);
