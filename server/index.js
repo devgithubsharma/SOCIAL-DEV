@@ -11,6 +11,7 @@ const postRoute = require("./routes/posts");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const PORT = process.env.PORT || 4000
 
 // const dbname = "social_database";
 
@@ -65,6 +66,6 @@ app.use("/api/posts", postRoute);
 app.get("/", (req, res) => {
     res.send("Welcome to homepage")
 })
-app.listen(4000, () => {
+app.listen(PORT, () => {
     console.log("Backend Server initiated")
 })
